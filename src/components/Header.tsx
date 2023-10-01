@@ -23,10 +23,11 @@ const Header = () => {
           <div className=""> 
             <input 
                 type="text" 
-                className="w-[350px] rounded-md focus:outline-none text-black px-5 py-2" 
+                className="w-[400px] rounded-md focus:outline-none text-black px-5 py-2" 
                 placeholder='vyhledat product...'
             />
           </div>
+
           <div className=""> 
             <button 
                 className='flex gap-3 bg-blue-500 px-4 py-2 rounded-md'

@@ -1,3 +1,14 @@
+## About Shopping cart
+<ul>
+   <li>Header</li>
+   <li>React router dom</li>
+   
+</ul>
+
+
+
+<img src="../client/src/images/eshop_main.png" width="300px">
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
