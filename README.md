@@ -1,13 +1,12 @@
 ## About Shopping cart
 <ul>
+   <p>steps </p>
    <li>Header</li>
-   <li>React router dom</li>
+   <li>React router dom. Two components CART and HOME</li>
+   <li> Context API </li>
    
 </ul>
 
-
-
-<img src="../client/src/images/eshop_main.png" width="300px">
 
 # React + TypeScript + Vite
 
