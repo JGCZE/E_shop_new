@@ -1,4 +1,7 @@
-import { createContext, ReactNode } from "react"
+import { createContext, ReactNode, useContext, useReducer } from "react"
+import { faker } from '@faker-js/faker'
+import { cartReducer } from "./Reducers"
+
 
 const CartContext = createContext({})
 
@@ -7,12 +10,41 @@ interface ContextProps {
     // reactNode is any type of react component, this props can validete any type of react component
   }
 
+// Products
 const Context = ({ children }: ContextProps) => {
-  return (
-    <CartContext.Provider value={}>
-        {children}
-    </CartContext.Provider>
-  )
+
+    const products = [...Array(20)].map(() => ({
+        id: faker.string.uuid(),
+        name: faker.commerce.productName(),
+        price: Number(faker.commerce.price()),
+        image: faker.image.url(),
+        inStock: faker.datatype.boolean(),
+        fastDelivery: faker.datatype.boolean(),
+        ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
+        offer: faker.helpers.arrayElement([
+            "Save 50%",
+            "70% bonanza",
+            "Republic Day Sale",
+            "Big Diwali Sale",
+            "Christmas Offer",
+                ]),
+ }))
+
+
+const [state, dispatch] = useReducer(cartReducer, { 
+    products: products, 
+    cart: [] }, () => ({ products, cart: [] }));
+
+    return (
+        <CartContext.Provider value={{ products, dispatch, state }}>
+                {children}
+        </CartContext.Provider>
+    )
 }
 
 export default Context
+
+// exporting the context
+export const CartState = () => {
+    return useContext(CartContext)
+}
