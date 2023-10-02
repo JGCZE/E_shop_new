@@ -1,17 +1,27 @@
 
 import { CartState } from "../context/Context"
+import SingleProduct from "./SingleProduct"
 
 
 const Home = () => {
 
   // access the products array from Context.tsx
-  const { state : {products}, } = CartState();
+  // destructure the products array from the state object
+  const { state : { products }} = CartState();
 
-  console.log(products);
 
   return (
-    <div>
-     Home
+    <div className="home">
+     {/* <Filters /> */}
+     <div className="productsContainer">
+        {
+          products.map(prod => {
+            return (
+              <SingleProduct />
+            )
+          })
+        }
+     </div>
     </div>
   )
 }
