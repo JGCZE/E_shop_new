@@ -4,11 +4,9 @@
    <li>Header</li>
    <li>React router dom. Two components CART and HOME</li>
    <li> Context API </li>
-   
+   <li> useReducer </li>
+   <li> SingleProduct component <li>
 </ul>
-
-### isues
-<p> V context se vypíšou produkty. Jsou objekty. Po předání objektu do "HOME" se ale "změní" na funkci na kterou nejde zavolat .map() </p>
 
 
 # React + TypeScript + Vite
