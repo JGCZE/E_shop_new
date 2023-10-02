@@ -7,9 +7,6 @@
    
 </ul>
 
-### isues
-<p> V context se vypíšou produkty. Jsou objekty. Po předání objektu do "HOME" se ale "změní" na funkci na kterou nejde zavolat .map() </p>
-
 
 # React + TypeScript + Vite
 
