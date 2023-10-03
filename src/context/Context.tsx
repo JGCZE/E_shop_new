@@ -18,16 +18,15 @@ const Context = ({ children }: ContextProps) => {
         name: faker.commerce.productName(),
         price: Number(faker.commerce.price()),
         image: faker.image.url(),
-        inStock: faker.datatype.boolean(),
+        // inStock: faker.datatype.boolean(),
+        inStock: faker.helpers.arrayElement([0, 1, 2, 3]), 
         fastDelivery: faker.datatype.boolean(),
         ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
-        offer: faker.helpers.arrayElement([
-            "Save 50%",
-            "70% bonanza",
-            "Republic Day Sale",
-            "Big Diwali Sale",
-            "Christmas Offer",
-                ]),
+        // offer: faker.helpers.arrayElement([
+        //     "Save 50%",
+        //     "Christmas Offer",
+        //     " "
+        // ]),
  }))
 
 

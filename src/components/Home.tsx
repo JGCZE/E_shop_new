@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="home flex">
      <Filters />
-     <div className="productsContainer flex flex-wrap justify-around w-[78%] p-4">
+     <div className="productsContainer flex flex-wrap justify-around w-[78%] p-4 gap-4">
         {products.map((prod ) => {
             return (
               <SingleProduct prod={ prod }/>

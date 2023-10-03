@@ -6,7 +6,7 @@ const Filters = () => {
   const [rating, setRating] = useState(2)
 
   return (
-    <div className="filters bg-blue-400 p-2 flex flex-col w-[20%] m-2 h-20vh">
+    <div className="filters bg-blue-400 p-2 flex flex-col min-w-[250px] m-2 h-[600px]">
         <span className="filter-title">Filtr</span>
 
         {/* Rdio buttons - for prices */}
@@ -30,7 +30,7 @@ const Filters = () => {
         </span>
 
         {/* Rating */}
-        <span className="rating-section flex justify-between items-center">
+        <span className="rating-section flex justify-between items-center pr-8 mt-2">
             <label htmlFor="">Rating: </label>
             <Rating rating={rating} onClick={(i) => setRating(i + 1)} />
         </span>
