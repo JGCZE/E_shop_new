@@ -1,6 +1,6 @@
-
 import { CartState } from "../context/Context"
 import SingleProduct from "./SingleProduct"
+import Filters from "./Filters"
 
 
 const Home = () => {
@@ -11,13 +11,12 @@ const Home = () => {
 
 
   return (
-    <div className="home">
-     {/* <Filters /> */}
-     <div className="productsContainer">
-        {
-          products.map(prod => {
+    <div className="home flex">
+     <Filters />
+     <div className="productsContainer flex flex-wrap justify-around w-[78%] p-4">
+        {products.map((prod ) => {
             return (
-              <SingleProduct />
+              <SingleProduct prod={ prod }/>
             )
           })
         }
