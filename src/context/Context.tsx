@@ -41,6 +41,8 @@ const [state, dispatch] = useReducer(cartReducer, {
     )
 }
 
+const cart = [0]
+
 export default Context
 
 // exporting the context
