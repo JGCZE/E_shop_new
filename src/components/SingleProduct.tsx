@@ -1,7 +1,12 @@
 import Rating from "./Rating"
+import { CartState}  from "../context/Context"
 
 const SingleProduct = ({ prod }) => {
+
     const {id, name, image, price, fastDelivery, ratings, offer, inStock} = prod
+    const { state: { cart }, 
+        dispatch } = CartState();
+
   return (
     <div key={id} className="w-[250px] m-2] border">
        <img src={image} alt="" className="w-[100%]"/>
@@ -20,14 +25,27 @@ const SingleProduct = ({ prod }) => {
 
             {/* Buttons for adding and removing */}
             <div className="cart-buttons flex">
-                { inStock ? (
-                    <button className="border bg-blue-500 px-6 py-2 rounded-md text-white mt-4"> Do košíku </button>
-                ) : (
-                    <div className="text-red-500"> Vyprodáno </div>
-                )
-                }
-
-                {/* <button> odebrat z košíku </button> */}
+               
+            {/* three conditions -  product isnt in cart, product is already in car, product out of stock */}
+            {cart.some((p) => p.id === prod.id) ? (
+                <button 
+                    onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: prod})}
+                    className="border bg-red-500 px-6 py-2 rounded-md text-white mt-4"
+                >
+                    Odebrat z košíku
+                </button>
+                    ):(
+                        // Is inStock? YES -> ADD to cart button  |  NO -> Vyprodáno 
+                        inStock > 0 ? (
+                           <button 
+                                 className="border bg-blue-500 px-6 py-2 rounded-md text-white mt-4"
+                                 onClick={() => dispatch({ type: "ADD_TO_CART", payload: prod})}
+                                 > Přidat do košíku
+                             </button> 
+                                        ):(
+                             <div className="text-red-500 mt-4"> Vyprodáno </div> )
+                        )
+            }
             </div>
         </div>
     </div>
