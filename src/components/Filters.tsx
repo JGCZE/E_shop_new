@@ -1,5 +1,10 @@
+import Rating from "./Rating"
+import { useState } from "react"
 
 const Filters = () => {
+
+  const [rating, setRating] = useState(2)
+
   return (
     <div className="filters bg-blue-400 p-2 flex flex-col w-[20%] m-2 h-20vh">
         <span className="filter-title">Filtr</span>
@@ -23,6 +28,14 @@ const Filters = () => {
             <input type="checkbox" id="fastDelivery"/>
             <label htmlFor="fastDelivery">rychlé doručení</label>
         </span>
+
+        {/* Rating */}
+        <span>
+            <label htmlFor="">Rating: </label>
+            <Rating rating={rating} onClick={(i) => setRating(i)} />
+        </span>
+            
+        {/* Reset button */}
         <button>Reset</button>
     </div>
   )
