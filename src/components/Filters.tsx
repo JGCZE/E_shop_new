@@ -30,9 +30,9 @@ const Filters = () => {
         </span>
 
         {/* Rating */}
-        <span>
+        <span className="rating-section flex justify-between items-center">
             <label htmlFor="">Rating: </label>
-            <Rating rating={rating} onClick={(i) => setRating(i)} />
+            <Rating rating={rating} onClick={(i) => setRating(i + 1)} />
         </span>
             
         {/* Reset button */}
