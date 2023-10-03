@@ -12,9 +12,21 @@ const SingleProduct = ({ prod }) => {
         ) : (
         <div>4 days delivery</div>
         )}
-        <span>
-            <Rating rating={ratings}/>
+        <span className="">
+            <Rating rating={ratings} />
         </span>
+
+        {/* Buttons for adding and removing */}
+        <div className="cart-buttons">
+            { inStock ? (
+                <button> Do košíku </button>
+            ) : (
+                <div> Vyprodáno </div>
+            )
+            }
+
+            {/* <button> odebrat z košíku </button> */}
+        </div>
         
     </div>
 )}
