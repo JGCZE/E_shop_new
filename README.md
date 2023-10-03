@@ -6,6 +6,9 @@
    <li> Context API </li>
    <li> useReducer </li>
    <li> SingleProduct component <li>
+   <li> button logic </li>
+   <li> reducers for ADD and REMOVE from Cart </li>
+   
 </ul>
 
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { RiShoppingCart2Fill } from 'react-icons/ri'
 import DropdownMenu from './DropdownMenu'
+import { CartState } from '../context/Context'
 
 
 // type Props = {}
@@ -12,6 +13,9 @@ const Header = () => {
     const toggleDropdownMenu = () => {
         setIsDropdownMenuOpen(!isDropdownMenuOpen)
     }
+
+    const { state: { cart } } = CartState()
+    
 
     return (
     <>
@@ -34,7 +38,7 @@ const Header = () => {
                 // onclick fce for toggle cart
                 onClick={toggleDropdownMenu}
             >
-                <p>0</p>
+                <p>{cart.length}</p>
                 <RiShoppingCart2Fill className="text-2xl"/>
             </button>
           </div>

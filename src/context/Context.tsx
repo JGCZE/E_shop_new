@@ -29,10 +29,7 @@ const Context = ({ children }: ContextProps) => {
         // ]),
  }))
 
-
-const [state, dispatch] = useReducer(cartReducer, { 
-    products: products, 
-    cart: [] }, () => ({ products, cart: [] }));
+const [state, dispatch] = useReducer(cartReducer, { products, cart:[] }, () => ({ products, cart:[] }));
 
     return (
         <CartContext.Provider value={{ products, dispatch, state }}>
@@ -40,8 +37,6 @@ const [state, dispatch] = useReducer(cartReducer, {
         </CartContext.Provider>
     )
 }
-
-const cart = [0]
 
 export default Context
 
