@@ -5,8 +5,6 @@ import { CartState } from '../context/Context'
 
 
 // type Props = {}
-
-
 const Header = () => {
     const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false)
     
@@ -14,7 +12,7 @@ const Header = () => {
         setIsDropdownMenuOpen(!isDropdownMenuOpen)
     }
 
-    const { state: { cart } } = CartState()
+    const { state: { cart }, productDispatch } = CartState()
     
 
     return (
@@ -29,6 +27,7 @@ const Header = () => {
                 type="text" 
                 className="w-[400px] rounded-md focus:outline-none text-black px-5 py-2" 
                 placeholder='vyhledat product...'
+                onChange={(e) => productDispatch({ type: "FILTER_BY_SEARCH", payload: e.target.value})}
             />
           </div>
 
