@@ -11,17 +11,14 @@ export const cartReducer = (state, action) => {
         return {...state, 
             cart: state.cart.filter((c)=> c.id !== action.payload.id)}
        }
-       case "CHANGE_QTY": {
-           console.log(state, action.payload.id, action.payload.qty)
-           console.log(state.cart)
-           // find the product in the cart
-           // action.payload.prod = id of the product
-           // action.payload.qty = qty of the product          
+       case "CHANGE_QTY": {     
         return {...state,
             cart: state.cart.filter((c)=> c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty)}
-       
     }
         default:
             break;
     }
+}
+
+export const productReducer = (state, action) => {
 }
