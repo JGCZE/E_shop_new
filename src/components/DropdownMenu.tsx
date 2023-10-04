@@ -13,7 +13,7 @@ const DropdownMenu = () => {
         <>
           {cart.map((prod) => 
             (
-            <div key={prod.id} className="flex justify-between items-center p-2">
+            <div key={prod.id} className="flex justify-between items-center p-2 mt-2">
                 <img src={prod.image} className="w-24 rounded-md" />
                 <div className="flex flex-col w-[50%]">
                   <span>{prod.name}</span>
@@ -25,7 +25,9 @@ const DropdownMenu = () => {
               </div>
             ))}
           <Link to="/cart">
-            <button className="w-[60%] my-6 p-2 mx-[20%] bg-blue-500 text-white rounded-md hover:bg-blue-700 text-lg">Přejít do košíku</button>
+            <button className="w-[95%] my-6 p-2 mx-[2.5%] bg-blue-500 text-white rounded-md hover:bg-blue-700 text-lg">
+              Přejít do košíku 
+            </button>
           </Link>
         </>
           ) : (
