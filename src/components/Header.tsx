@@ -13,7 +13,6 @@ const Header = () => {
     }
 
     const { state: { cart }, productDispatch } = CartState()
-    
 
     return (
     <>
@@ -33,7 +32,7 @@ const Header = () => {
 
           <div className=""> 
             <button 
-                className='flex gap-3 bg-blue-500 px-4 py-2 rounded-md'
+                className='flex gap-3 bg-blue-500 w-20 px-4 py-2 rounded-md'
                 // onclick fce for toggle cart
                 onClick={toggleDropdownMenu}
             >

@@ -31,7 +31,7 @@ const DropdownMenu = () => {
           </Link>
         </>
           ) : (
-        <p className="mt-4 ml-4">Váš košík je prázdný</p>
+        <p className="mt-[30px] ml-14 font-bold text-xl">Váš košík je prázdný</p>
       )}
     </div>
   )
