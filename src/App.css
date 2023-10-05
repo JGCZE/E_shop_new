@@ -1,3 +1,36 @@
+/* .filters {
+    position: relative;
+} */
+
 .filters > span {
     padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
 }
+
+.rating-section > span {
+    font-size: 22px
+}
+
+.filters input {
+    margin: 0 20px 0 10px;
+    cursor: pointer;
+}
+
+.filters input[type="radio"] {
+    height: 18px;
+    width: 18px;
+}
+
+.filters input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+
+.filters input[type="checkbox"]::before {
+    height: 18px;
+    width: 18px;
+    box-shadow: #fff;
+}
+

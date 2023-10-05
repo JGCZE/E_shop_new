@@ -9,11 +9,11 @@ const Filters = () => {
     // const [rating, setRating] = useState(2) nahrazeno "byRaing" z Context.tsx
 
   return (
-    <div className="filters bg-blue-400 p-2 flex flex-col min-w-[250px] m-2 h-[600px]">
-        <span className="filter-title">Filtr</span>
+    <div className="filters bg-blue-400 p-2 flex flex-col min-w-[250px] m-4 h-[600px] ">
+        <h3 className="filter-title text-center text-xl m-6 font-semibold">Filtr produktů</h3>
 
         {/* Rdio buttons - for prices - only one is possible */}
-        <span>
+        <span className="mt-4">
            <input type="radio" id="descending" name="price" 
                   onChange={() => productDispatch({ type: "SORT_BY_PRICE", payload: "lowToHigh"})}
                   checked={sort === "lowToHigh" ? true : false}
@@ -51,7 +51,11 @@ const Filters = () => {
         </span>
             
         {/* Reset button */}
-        <button className="" onClick={() => productDispatch({ type: "CLEAR_FILTERS" })}>Reset</button>
+        <button className="bg-white py-2 rounded-md text-black mt-6 text-lg" 
+                onClick={() => productDispatch({ type: "CLEAR_FILTERS" })}
+        >
+            Reset
+        </button>
     </div>
   )
 }
