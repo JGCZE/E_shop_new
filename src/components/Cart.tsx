@@ -25,15 +25,16 @@ const Cart = () => {
             const {id, name, image, price, fastDelivery, ratings, offer, inStock, qty} = prod
 
             return (
-              <div key={id} className="oneProduct grid grid-cols-5">
-                  <img src={image} alt="" className="w-40"/>
-                  <p>{name}</p>
+              <div key={id} className="oneProduct grid grid-cols-6 text-center items-center border m-8 text-xl">
+                  <img src={image} alt="" className="w-40 grid-cols-1"/>
+                  <p className="col-span-2">{name}</p>
 
                   {/* qty will change by inStock variable  */}
-                  <span>
+                  <span className="">
                     <form action="">
                       <label htmlFor="quantity">
                         <select 
+                          className="block cursor-pointer mx-auto py-2 px-0 w-[40%] text-mg text-black  border-0 border-b-2 border-black  dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-black"
                           name="quantity" 
                           id="quantity" 
                           onChange={(e) => dispatch({ type: "CHANGE_QTY", payload: { id: prod.id, qty:e.target.value}})} >
@@ -47,7 +48,7 @@ const Cart = () => {
                   </span>
 
                   <p>{price} USD</p>
-                  <button onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: prod})}>
+                  <button className="m-auto" onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: prod})}>
                     <AiFillDelete />
                   </button>
               </div>
@@ -55,14 +56,18 @@ const Cart = () => {
           }
         </div>
 
-        <div className="summary">
-          <span>Celkem: {cart.length} pložky</span>
-          <span>Cena celkem: {total} </span>
+        <div className="summary border m-8 px-8 py-20 flex flex-col text-xl w-80">
+          <span className="">Celkem: 
+            <span className="font-bold mx-6">{cart.length} položek</span>
+          </span>
+          <span>Cena celkem:
+             <span className="font-bold mx-6">{total}</span>
+          </span>
           <button></button>
         </div>
      </div>
      <Link to="/">
-        <button >Zpět na úvodní stranu</button>
+        <button className="bg-blue-500 hover:bg-blue-700 px-8 py-4 mx-8 my-28 text-white rounded-lg">Zpět na úvodní stranu</button>
      </Link>
     </>
   )
