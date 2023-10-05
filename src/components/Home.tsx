@@ -12,16 +12,15 @@ const Home = () => {
   const transformedProducts = () => {
     let sortedProducts = products;
 
-    if (byStock) {
+    if(sort) {
+      sortedProducts = products.sort((a,b) => (
+      sort === "lowToHigh" ? a.price - b.price : b.price - a.price))
+    } if (byStock) {
         sortedProducts = sortedProducts.filter((prod) => prod.inStock > 0)
     } if (byFastDelivery) {
         sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery)
     } if (byRating) {
         sortedProducts = sortedProducts.filter((prod) => prod.ratings >= byRating)
-    } if(sort == "lowToHigh") {
-        sortedProducts = products.sort((a,b) => a.price - b.price)
-    } if (sort == "highToLow") {
-        sortedProducts = products.sort((a,b) => b.price - a.price)
     } if (searchQuery) {
         sortedProducts = products.filter((prod) => prod.name.toLowerCase().includes(searchQuery))
     }
