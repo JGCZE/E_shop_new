@@ -27,10 +27,3 @@
     height: 18px;
     width: 18px;
 }
-
-.filters input[type="checkbox"]::before {
-    height: 18px;
-    width: 18px;
-    box-shadow: #fff;
-}
-
