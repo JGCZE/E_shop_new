@@ -12,11 +12,19 @@ const Home = () => {
   const transformedProducts = () => {
     let sortedProducts = products;
 
-    // sorting by price
-    if(sort) {
-      sortedProducts = products.sort((a,b) => a.price - b.price)
+    if(byStock) {
+        sortedProducts = sortedProducts.filter((prod) => prod.inStock > 0)
+    } else if (byFastDelivery) {
+        sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery)
+    } else if (byRating) {
+        sortedProducts = sortedProducts.filter((prod) => prod.ratings >= byRating)
+    } else if(sort == "lowToHigh") {
+        sortedProducts = products.sort((a,b) => a.price - b.price)
+    } else if (sort == "highToLow") {
+        sortedProducts = products.sort((a,b) => b.price - a.price)
+    } else if (searchQuery) {
+        sortedProducts = products.filter((prod) => prod.name.toLowerCase().includes(searchQuery))
     }
-    //console.log(products.sort((a,b) => a.price - b.price))
     return sortedProducts
   }
   
