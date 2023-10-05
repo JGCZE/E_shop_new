@@ -1,6 +1,11 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
-const Rating = ({ rating, onClick }) => {
+interface RatingProps {
+    rating: number
+    onClick: (index: number) => void // add type to onClick prop
+  }
+
+const Rating = ({ rating, onClick }: RatingProps) => {
   return (
     <>
       {
