@@ -8,7 +8,7 @@ const SingleProduct = ({ prod }) => {
         dispatch } = CartState();
 
   return (
-    <div key={id} className="w-[250px] m-2] border">
+    <div key={id} className="w-[250px] mt-2 border sm:w-[90%] mt-0 md:max-w-[250px]">
        <img src={image} alt="" className="w-[100%]"/>
         <div className="p-4">
             <p>{name}</p>
