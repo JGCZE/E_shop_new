@@ -19,13 +19,13 @@ const Cart = () => {
 
   return (
     <>
-     <div className="home flex justify-between">
+     <div className="home flex justify-between sm:flex-col md:flex-row">
         <div className="productContainer">
           {cart.map((prod) => {
             const {id, name, image, price, fastDelivery, ratings, offer, inStock, qty} = prod
 
             return (
-              <div key={id} className="oneProduct grid grid-cols-6 text-center items-center border m-8 text-xl">
+              <div key={id} className="oneProduct grid grid-cols-6 text-center items-center border m-8 md:mt-8 mx-2 lg:mx-8 text-lg">
                   <img src={image} alt="" className="w-40 grid-cols-1"/>
                   <p className="col-span-2">{name}</p>
 
@@ -56,12 +56,12 @@ const Cart = () => {
           }
         </div>
 
-        <div className="summary border m-8 px-8 py-20 flex flex-col text-xl w-80">
-          <span className="">Celkem: 
-            <span className="font-bold mx-6">{cart.length} položek</span>
+        <div className="summary border m-8 px-8 py-20 flex flex-col text-xl w-80 md:mx-2 lg:mx-8 ">
+          <span className="md: text-sm flex flex-col mb-4 lg:text-lg">Celkem: 
+            <span className="font-bold mx-6 md:text-base">{cart.length} položek</span>
           </span>
-          <span>Cena celkem:
-             <span className="font-bold mx-6">{total}</span>
+          <span className="md: text-sm flex flex-col mb-4 lg:text-lg">Cena celkem:
+             <span className="font-bold mx-6 md:text-base lg:text-lg">{total} usd</span>
           </span>
           <button></button>
         </div>

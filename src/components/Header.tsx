@@ -16,8 +16,8 @@ const Header = () => {
 
     return (
     <>
-       <nav className='bg-black text-white flex justify-between items-center h-20 px-10'>
-          <div className="text-xl">
+       <nav className='header bg-black text-white flex justify-between items-center h-20 px-10'>
+          <div className="header-logo text-xl">
             Shopping Cart
           </div>
 

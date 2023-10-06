@@ -9,7 +9,7 @@ const Filters = () => {
     // const [rating, setRating] = useState(2) nahrazeno "byRaing" z Context.tsx
 
   return (
-    <div className="filters bg-blue-400 p-2 flex flex-col min-w-[250px] m-4 h-[600px] sm:m-1 sm:min-w-[100px] lg:m-2 lg:m-4">
+    <div className="filters bg-blue-400 p-2 flex flex-col min-w-[250px] m-4 h-[600px] sm:mt-4 sm:min-w-[100px] lg:mt-4 xl:w-[300px]">
         <h3 className="filter-title text-center text-2xl mt-6 mb-10 font-semibold">Filtr produktů</h3>
 
         {/* Rdio buttons - for prices - only one is possible */}

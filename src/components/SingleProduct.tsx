@@ -8,19 +8,19 @@ const SingleProduct = ({ prod }) => {
         dispatch } = CartState();
 
   return (
-    <div key={id} className="w-[250px] mt-2 border sm:w-[90%] mt-0 md:max-w-[250px]">
+    <div key={id} className="w-[250px] mt-2 border sm:w-[90%] mt-0 md:max-w-[250px]" id="single-product">
        <img src={image} alt="" className="w-[100%]"/>
         <div className="p-4">
             <p>{name}</p>
-            <span className="text-green-800 font-bold mx-2">{price} USD</span>
             {fastDelivery ? (
-            <div>Fast Delivery</div>
-            ) : (
-            <div>4 days delivery</div>
-            )}
+                <div>Fast Delivery</div>
+                ) : (
+                    <div>4 days delivery</div>
+                    )}
             <span className="flex">
                 <Rating rating={ratings} />
             </span>
+            <div className="text-green-900 font-bold mx-2 mt-4">{price} USD</div>
 
             {/* Buttons for adding and removing */}
             <div className="cart-buttons flex">
