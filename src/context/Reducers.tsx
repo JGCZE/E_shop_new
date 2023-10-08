@@ -1,5 +1,3 @@
-import { Reducer } from "react";
-
 export const ACTIONS = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
@@ -23,25 +21,15 @@ interface ProductState {
     id: number
 }
 
-type Action =
-  | { type: "ADD_TO_CART"; payload: Product }
-  | { type: "REMOVE_FROM_CART"; payload: Product }
-  | { type: "CHANGE_QTY"; payload: { id: number; qty: number } }
-  | { type: "SORT_BY_PRICE"; payload: string }
-  | { type: "FILTER_BY_STOCK" }
-  | { type: "FILTER_BY_DELIVERY" }
-  | { type: "FILTER_BY_RATING"; payload: number }
-  | { type: "FILTER_BY_SEARCH"; payload: string }
+interface Action {
+    type: string
+    payload: {id: number, qty: number}
+}
 
-
-// interface Action {
-//     type: string
-//     payload?: any
-// }
-// interface CartItem extends ProductState {
-//     qty: number
-// }
-
+interface CartItem {
+    id: number;
+    qty: {id: number, qty: number};
+  }
 
 export const cartReducer = (state: ProductState, action: Action) => {
     switch (action.type) {
@@ -50,11 +38,12 @@ export const cartReducer = (state: ProductState, action: Action) => {
        }
        case ACTIONS.REMOVE_FROM_CART: {
         return {...state, 
-            cart: state.cart.filter((c)=> c.id !== action.payload.id)}
+            cart: state.cart.filter((c: CartItem)=> c.id !== action.payload.id)}
        }
        case ACTIONS.CHANGE_QTY: {     
+        console.log(action.payload)
         return {...state,
-            cart: state.cart.filter((c)=> c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty)}
+            cart: state.cart.map((c: CartItem)=> c.id === action.payload.id ? {...c, qty: action.payload.qty} : c)}
     }
         default:
             break;
