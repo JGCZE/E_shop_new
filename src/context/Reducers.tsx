@@ -1,3 +1,5 @@
+import { Reducer } from "react";
+
 export const ACTIONS = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
@@ -10,15 +12,8 @@ export const ACTIONS = {
     CLEAR_FILTERS: "CLEAR_FILTERS"
 }
 
-interface Action {
-    type: string
-    payload?: any
-}
-// interface CartItem extends ProductState {
-//     qty: number
-// }
-
 interface ProductState {
+    product: []
     cart: []
     byStock: boolean
     byFastDelivery: boolean
@@ -28,16 +23,36 @@ interface ProductState {
     id: number
 }
 
+type Action =
+  | { type: "ADD_TO_CART"; payload: Product }
+  | { type: "REMOVE_FROM_CART"; payload: Product }
+  | { type: "CHANGE_QTY"; payload: { id: number; qty: number } }
+  | { type: "SORT_BY_PRICE"; payload: string }
+  | { type: "FILTER_BY_STOCK" }
+  | { type: "FILTER_BY_DELIVERY" }
+  | { type: "FILTER_BY_RATING"; payload: number }
+  | { type: "FILTER_BY_SEARCH"; payload: string }
+
+
+// interface Action {
+//     type: string
+//     payload?: any
+// }
+// interface CartItem extends ProductState {
+//     qty: number
+// }
+
+
 export const cartReducer = (state: ProductState, action: Action) => {
     switch (action.type) {
        case ACTIONS.ADD_TO_CART: {
         return {...state, cart:[...state.cart, {...action.payload, qty: 1}]}
        }
-       case "REMOVE_FROM_CART": {
+       case ACTIONS.REMOVE_FROM_CART: {
         return {...state, 
             cart: state.cart.filter((c)=> c.id !== action.payload.id)}
        }
-       case "CHANGE_QTY": {     
+       case ACTIONS.CHANGE_QTY: {     
         return {...state,
             cart: state.cart.filter((c)=> c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty)}
     }
@@ -48,17 +63,17 @@ export const cartReducer = (state: ProductState, action: Action) => {
 
 export const productReducer = (state: ProductState, action: Action) => {
     switch (action.type) {
-        case "SORT_BY_PRICE":
+        case ACTIONS.SORT_BY_PRICE:
             return {...state, sort: action.payload}
-        case "FILTER_BY_STOCK":
+        case ACTIONS.FILTER_BY_STOCK:
             return {...state, byStock: !state.byStock}
-        case "FILTER_BY_DELIVERY":
+        case ACTIONS.FILTER_BY_DELIVERY:
             return {...state, byFastDelivery: !state.byFastDelivery}
-        case "FILTER_BY_RATING":
+        case ACTIONS.FILTER_BY_RATING:
             return {...state, byRating: action.payload}
-        case "FILTER_BY_SEARCH":
+        case ACTIONS.FILTER_BY_SEARCH:
             return {...state, searchQuery: action.payload}
-        case "CLEAR_FILTERS":
+        case ACTIONS.CLEAR_FILTERS:
             return {byStock: false, byFastDelivery: false, byRating: 0, searchQuery: ""}
         default:
             return state;
