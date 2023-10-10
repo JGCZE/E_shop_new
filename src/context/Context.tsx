@@ -29,11 +29,13 @@ const Context = ({ children }: ContextProps) => {
         // ]),
  }))
 
+
  // reducer for Cart 
-const [state, dispatch] = useReducer(cartReducer, { products, cart:[] }, () => ({ products, cart:[] }));
+const [state, dispatch] = useReducer(cartReducer, { products, cart:[] }, () => ({ cart:[], products }));
 
 // reducer fo Filters
 const [productState, productDispatch] = useReducer(productReducer, { byStock: false, byFastDelivery: false, byRating: 0, searchQuery: "" })
+
 
     return (
         <CartContext.Provider value={{ products, dispatch, state, productDispatch, productState }}>
@@ -46,5 +48,5 @@ export default Context
 
 // exporting the context
 export const CartState = () => {
-    return useContext(CartContext)
+    return useContext<CartContext>(CartContext)
 }
