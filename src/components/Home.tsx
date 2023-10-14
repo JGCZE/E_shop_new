@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="home flex justify-center">
      <Filters />
-     <div className="productsContainer flex flex-wrap justify-evenly w-[78%] mt-4 p-4 gap-4 sm:p-1">
+     <div className="productsContainer flex flex-wrap justify-evenly w-[78%] mt-2 p-4 gap-4 sm:p-1">
         {transformedProducts().map((prod: Product ) => {
             return (
               <SingleProduct prod={ prod } key={prod.id}/>

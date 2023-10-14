@@ -37,9 +37,16 @@
     transition: 0.3s ease-in-out all;
 }
 
+
 #single-product:hover {
     box-shadow:  0 15px 35px 2px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.desc-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 640px) {
