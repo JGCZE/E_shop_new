@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
-  const { state: {cart}, dispatch, } = CartState()
+  const { state: {cart}, dispatch } = CartState()
 
   const [total, setTotal] = useState()
 
@@ -22,7 +22,7 @@ const Cart = () => {
      <div className="home flex justify-between sm:flex-col md:flex-row">
         <div className="productContainer">
           {cart.map((prod) => {
-            const {id, name, image, price, fastDelivery, ratings, offer, inStock, qty} = prod
+            const {id, name, image, price, inStock } = prod
 
             return (
               <div key={id} className="oneProduct grid grid-cols-6 text-center items-center border m-8 md:mt-8 mx-2 lg:mx-8 text-lg">
@@ -36,7 +36,7 @@ const Cart = () => {
                         <select 
                           className="block cursor-pointer mx-auto py-2 px-0 w-[40%] text-mg text-black  border-0 border-b-2 border-black  dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-black"
                           name="quantity" 
-                          id="quantity" 
+                          id="quantity"
                           onChange={(e) => dispatch({ type: "CHANGE_QTY", payload: { id: prod.id, qty:e.target.value}})} >
                             {[...Array(inStock).keys()].map((x) => (
                               <option value={x+1}>{x+1}</option>

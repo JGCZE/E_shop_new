@@ -29,7 +29,7 @@ interface Action {
 interface CartItem {
     id: number;
     qty: {id: number, qty: number};
-  }
+}
 
 export const cartReducer = (state: ProductState, action: Action) => {
     switch (action.type) {

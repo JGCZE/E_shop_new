@@ -1,9 +1,19 @@
 import Rating from "./Rating"
 import { CartState}  from "../context/Context"
 
-const SingleProduct = ({ prod }) => {
+interface Product {
+    id: string
+    name: string
+    image: string
+    price: number
+    fastDelivery: boolean
+    ratings: number
+    inStock: number
+}
 
-    const {id, name, image, price, fastDelivery, ratings, inStock} = prod
+const SingleProduct = ({ prod } : {prod: Product}) => {
+
+    const {id, name, image, price, fastDelivery, ratings, inStock, desc} = prod
     const { state: { cart }, 
         dispatch } = CartState();
 
@@ -11,15 +21,16 @@ const SingleProduct = ({ prod }) => {
     <div key={id} className="w-[250px] mt-2 border sm:w-[90%] mt-0 md:max-w-[250px]" id="single-product">
        <img src={image} alt="" className="w-[100%]"/>
         <div className="p-4">
-            <p>{name}</p>
+            <p className="font-bold text-lg">{name}</p>
             {fastDelivery ? (
-                <div>Fast Delivery</div>
+                <div className="text-lime-600 font-bold my-1">Fast Delivery</div>
                 ) : (
                     <div>4 days delivery</div>
                     )}
             <span className="flex">
                 <Rating rating={ratings} />
             </span>
+            <div className="my-4">{desc}</div>
             <div className="text-green-900 font-bold mx-2 mt-4">{price} USD</div>
 
             {/* Buttons for adding and removing */}

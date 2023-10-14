@@ -1,9 +1,9 @@
 import Rating from "./Rating"
-import { useState } from "react"
 import { CartState}  from "../context/Context"
 
 const Filters = () => {
-    const { productState: { byStock, byRating, sort, byFastDelivery, searchQuery }, productDispatch  } = CartState()
+
+    const { productState: { byStock, byRating, sort, byFastDelivery }, productDispatch  } = CartState()
     // TEST for filters
     // console.log(byStock, byRating, sort, byFastDelivery )
     // const [rating, setRating] = useState(2) nahrazeno "byRaing" z Context.tsx

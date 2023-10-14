@@ -1,6 +1,5 @@
 import { AiFillDelete } from "react-icons/ai"
 import { CartState } from "../context/Context"
-import Cart from "./Cart"
 import { Link } from "react-router-dom"
 
 

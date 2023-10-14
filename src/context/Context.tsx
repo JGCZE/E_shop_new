@@ -22,6 +22,7 @@ const Context = ({ children }: ContextProps) => {
         inStock: faker.helpers.arrayElement([0, 1, 2, 3, 4, 5]), 
         fastDelivery: faker.datatype.boolean(),
         ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
+        desc: faker.commerce.productDescription(),
         // offer: faker.helpers.arrayElement([
         //     "Save 50%",
         //     "Christmas Offer",
@@ -29,6 +30,7 @@ const Context = ({ children }: ContextProps) => {
         // ]),
  }))
 
+ //console.log(products[0].desc)
 
  // reducer for Cart 
 const [state, dispatch] = useReducer(cartReducer, { products, cart:[] }, () => ({ cart:[], products }));

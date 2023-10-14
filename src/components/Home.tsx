@@ -16,7 +16,7 @@ const Home = () => {
     fastDelivery: boolean;
     ratings: number;
   }
-  
+    
   const { state : { products }, productState: { byStock, byRating, sort, byFastDelivery, searchQuery }} = CartState();
 
 
