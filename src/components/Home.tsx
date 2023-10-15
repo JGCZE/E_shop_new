@@ -15,6 +15,7 @@ const Home = () => {
     inStock: number;
     fastDelivery: boolean;
     ratings: number;
+    desc: string;
   }
     
   const { state : { products }, productState: { byStock, byRating, sort, byFastDelivery, searchQuery }} = CartState();
@@ -37,7 +38,7 @@ const Home = () => {
     }
     return sortedProducts
   }
-  
+
   return (
     <div className="home flex justify-center">
      <Filters />
@@ -52,17 +53,5 @@ const Home = () => {
     </div>
   )
 }
-
-// Home.propTypes = {
-//   prod: PropTypes.shape({
-//     image: PropTypes.string.isRequired,
-//     product: PropTypes.string.isRequired,
-//     price: PropTypes.string.isRequired,
-//     fastDelivery: PropTypes.any.isRequired,
-//     ratings: PropTypes.number.isRequired,
-//     id: PropTypes.any.isRequired,
-//     inStock: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
 
 export default Home

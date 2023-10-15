@@ -3,13 +3,14 @@ import { CartState}  from "../context/Context"
 import { useState } from "react"
 
 interface Product {
-    id: string
+    id: number
     name: string
     image: string
     price: number
     fastDelivery: boolean
     ratings: number
     inStock: number
+    desc: string
 }
 
 const SingleProduct = ({ prod } : {prod: Product}) => {
@@ -20,7 +21,7 @@ const SingleProduct = ({ prod } : {prod: Product}) => {
         dispatch } = CartState();
 
   return (
-    <div key={id} className="w-[250px] mt-2 border sm:w-[90%] mt-0 md:max-w-[250px]" id="single-product">
+    <div key={id} className="w-[250px] mt-2 border sm:w-[90%] md:max-w-[250px]" id="single-product">
        <img src={image} alt="" className="w-[100%]"/>
         <div className="p-3">
             <p className="text-lg">{name}</p>
