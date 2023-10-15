@@ -1,15 +1,24 @@
-## About Shopping cart
-<ul>
-   <p>steps </p>
-   <li>Header</li>
-   <li>React router dom. Two components CART and HOME</li>
-   <li> Context API </li>
-   <li> useReducer </li>
-   <li> SingleProduct component <li>
-   <li> button logic </li>
-   <li> reducers for ADD and REMOVE from Cart </li>
+## About eshop
+### live demo: https://e-shop-new.vercel.app
+
+Mock e-shop with mock items. Products can be added, removed and their quantities can be adjusted in the shopping cart. One can filter by ratings, sort by price or delivery speed. I utilized useState, useEffect, Context, and useReducer for state management and data transfer between components. The React router was used to create the Home and Cart pages. Tailwind was employed for styling, and npm Faker for generating imaginary items.
+
+My future plans:
+I intend to gradually expand this e-shop into a full-stack project.
+
+1. Pagination
+2. Products will be loaded from a MySQL database
+3. Administrator login
+4. In the admin section, you will be able to delete, add, or modify products and their prices, and more.
+5. Performance optimalization
    
-</ul>
+<strong> Preview of the home page after adding one item to the cart. </strong>
+<img width="700" alt="eshop_a" src="https://github.com/JGCZE/E_shop_new/assets/97174593/f062f349-247e-4459-b25b-81805cb80dc9">
+<br>
+
+<strong> Preview of items in the cart. </strong> <br>
+<img width="700" alt="eshop_b" src="https://github.com/JGCZE/E_shop_new/assets/97174593/ee680e4c-72bc-412f-a3df-799be6597480">
+
 
 
 # React + TypeScript + Vite
