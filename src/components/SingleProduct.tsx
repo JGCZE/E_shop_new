@@ -28,7 +28,9 @@ const SingleProduct = ({ prod } : {prod: Product}) => {
 
             {/* Rating */}
             <span className="flex">
-                <Rating rating={ratings} />
+                <Rating rating={ratings} onClick={function (): void {
+                      throw new Error("Function not implemented.")
+                  } } />
             </span>
 
             {/* Fast delivery */}
