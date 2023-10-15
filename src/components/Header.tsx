@@ -4,8 +4,6 @@ import DropdownMenu from './DropdownMenu'
 import { CartState } from '../context/Context'
 
 
-
-// type Props = {}
 const Header = () => {
     const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false)
     

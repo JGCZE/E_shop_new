@@ -11,7 +11,7 @@ export const ACTIONS = {
 }
 
 interface ProductState {
-    product: []
+    products: []
     cart: []
     byStock: boolean
     byFastDelivery: boolean

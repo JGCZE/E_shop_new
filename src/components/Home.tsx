@@ -4,9 +4,6 @@ import Filters from "./Filters"
 
 
 const Home = () => {
-
-  // access the products array from Context.tsx
-  // destructure the products array from the state object
   interface Product {
     id: number;
     name: string;
@@ -19,7 +16,6 @@ const Home = () => {
   }
     
   const { state : { products }, productState: { byStock, byRating, sort, byFastDelivery, searchQuery }} = CartState();
-
 
   const transformedProducts = () => {
     let sortedProducts = products;
