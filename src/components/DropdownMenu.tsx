@@ -7,7 +7,7 @@ const DropdownMenu = () => {
   const {state: { cart }, dispatch} = CartState()
 
   return (
-    <div className="w-[500px] min-h-[100px] bg-blue-100 float-right border-2 border-black z-100 absolute right-8 rounded-b-md">
+    <div className="w-[380px] min-h-[100px] bg-blue-100 float-right border-2 border-black z-100 absolute right-8 rounded-b-md sm:w-[500px]">
       {cart.length > 0 ? (
         <>
           {cart.map((prod) => 
