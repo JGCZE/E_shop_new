@@ -7,10 +7,11 @@ My future plans:
 I intend to gradually expand this e-shop into a full-stack project.
 
 1. Pagination
-2. Products will be loaded from a MySQL database
-3. Administrator login
-4. In the admin section, you will be able to delete, add, or modify products and their prices, and more.
-5. Performance optimalization
+2. Improve of graphics and addition of a footer.
+3. Products will be loaded from a MySQL database
+4. Administrator login
+5. In the admin section, you will be able to delete, add, or modify products and their prices, and more.
+6. Performance optimalization
    
 <strong> Preview of the home page after adding one item to the cart. </strong>
 <img width="700" alt="eshop_a" src="https://github.com/JGCZE/E_shop_new/assets/97174593/f062f349-247e-4459-b25b-81805cb80dc9">
